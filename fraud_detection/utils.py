@@ -1,7 +1,7 @@
 import pickle
 
 
-fraudModelsBaseDir = "models/"
+fraudModelsBaseDir = "fraud_detection/models/"
 fraudModelsSrc = {
     "gradient-boost": "{}".format(fraudModelsBaseDir + "gradient-boost.pkl"),
     "random-forest": "{}".format(fraudModelsBaseDir + "random-forest.pkl"),
@@ -41,7 +41,7 @@ def getModelFeaturesValues(postDataFeatures):
     return features, values
 
 
-def getFraudModel(model):
+def getFraudDetectionModel(model):
     try:
         if fraudModelsSrc[model] == None:
             raise "Fraud detection model requested not found."
